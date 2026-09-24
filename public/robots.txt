@@ -1,17 +1,16 @@
 # robots.txt для wedora.uz
-# Обновлено: 2026
 
 User-agent: *
 Allow: /
 
-# Служебные API и служебные пути — не индексировать
+# Служебные пути
 Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/
 Disallow: /cart/
 Disallow: /checkout/
 
-# Параметры-дубли не индексируем
+# URL с параметрами, которые могут создавать дубли
 Disallow: /*?guest=
 Disallow: /*?utm_
 Disallow: /*?ref=
@@ -21,21 +20,11 @@ User-agent: Yandex
 Allow: /
 Disallow: /api/
 Disallow: /_next/
-Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&ref&guest
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
 
-# Google
-User-agent: Googlebot
-Allow: /
-Disallow: /api/
-Disallow: /_next/
-
-# Bing
-User-agent: Bingbot
-Allow: /
-Disallow: /api/
-Disallow: /_next/
-
-# Плохие боты — блокируем
+# Плохие/нежелательные боты
 User-agent: AhrefsBot
 Disallow: /
 
@@ -53,4 +42,3 @@ Disallow: /
 
 # Sitemap
 Sitemap: https://wedora.uz/sitemap.xml
-Host: https://wedora.uz

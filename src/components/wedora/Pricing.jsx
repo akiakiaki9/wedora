@@ -1,17 +1,16 @@
 import { Divider } from "./Decor";
 
-
 const plans = [
     {
         name: 'Base',
-        desc: 'Стандартное приглашение',
+        desc: 'Стандартное онлайн-приглашение на свадьбу',
         price: '200 000',
         note: 'разово',
         features: [
-            '1 приглашение на свадьбу',
-            'Готовый шаблон на выбор',
-            'Ссылка и QR-код',
-            'На любых языках (до 4)',
+            '1 онлайн-приглашение на свадьбу',
+            'Готовый дизайн на выбор',
+            'Персональная ссылка и QR-код',
+            'До 4 языков',
             'Фоновая музыка',
             'Таймер до свадьбы',
             'Карта локации',
@@ -20,7 +19,7 @@ const plans = [
     },
     {
         name: 'Pro',
-        desc: 'Персонально для каждого гостя',
+        desc: 'Персональное приглашение для каждого гостя',
         price: '300 000',
         note: 'разово',
         featured: true,
@@ -39,31 +38,63 @@ export default function Pricing() {
         <section className="w-section" id="pricing">
             <div className="w-section-inner">
                 <div className="w-section-head">
-                    <div className="w-section-label">Тарифы</div>
-                    <h2 className="w-section-title">Выберите подходящий</h2>
-                    <div className="w-divider"><Divider /></div>
+                    <div className="w-section-label">
+                        Цены на свадебные приглашения
+                    </div>
+
+                    <h2 className="w-section-title">
+                        Стоимость онлайн-приглашения на свадьбу
+                    </h2>
+
+                    <div className="w-divider">
+                        <Divider />
+                    </div>
+
                     <p className="w-section-sub">
-                        Все тарифы включают ссылку, QR-код, красивый дизайн и поддержку.
-                        Оплата — по факту согласования макета.
+                        Выберите подходящий тариф для вашего свадебного
+                        приглашения. Все тарифы включают персональную ссылку,
+                        QR-код, красивый дизайн и поддержку. Оплата — после
+                        согласования макета.
                     </p>
                 </div>
 
                 <div className="w-pricing-grid">
                     {plans.map((p, i) => (
-                        <div key={i} className={`w-price ${p.featured ? 'featured' : ''}`}>
-                            <div className="w-price-name">{p.name}</div>
-                            <div className="w-price-desc">{p.desc}</div>
+                        <div
+                            key={i}
+                            className={`w-price ${p.featured ? 'featured' : ''}`}
+                        >
+                            <div className="w-price-name">
+                                {p.name}
+                            </div>
+
+                            <div className="w-price-desc">
+                                {p.desc}
+                            </div>
+
                             <div className="w-price-value font-serif">
                                 {p.price}
                                 <span>сум</span>
                             </div>
-                            <div className="w-price-note">{p.note}</div>
+
+                            <div className="w-price-note">
+                                {p.note}
+                            </div>
 
                             <ul className="w-price-list">
-                                {p.features.map((f, j) => <li key={j}>{f}</li>)}
+                                {p.features.map((f, j) => (
+                                    <li key={j}>{f}</li>
+                                ))}
                             </ul>
 
-                            <a href="#contact" className={`w-btn ${p.featured ? 'w-btn-primary' : 'w-btn-ghost'}`}>
+                            <a
+                                href="#contact"
+                                className={`w-btn ${p.featured
+                                        ? 'w-btn-primary'
+                                        : 'w-btn-ghost'
+                                    }`}
+                                aria-label={`Заказать ${p.name} — онлайн-приглашение на свадьбу`}
+                            >
                                 Заказать
                             </a>
                         </div>
